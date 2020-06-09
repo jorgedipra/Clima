@@ -7,6 +7,8 @@
     left: 2.5%;
     top: 2.5%;
     height 95%;
+    min-height: 900px;
+    max-height: 900px;
     width: 95%;    
 	@media ({$lg}) {
         grid-column:2
@@ -26,9 +28,96 @@
 	 	width: 100%;	
 	}
 }
-#baner{
+#banner{
     grid-row 1;
+    display: grid;
+    grid-template-columns: auto 90% auto;
+    grid-template-rows: auto 90% auto;
+    @media ({$lg}) {
+        grid-template-columns: auto 900px auto;
+    }
+}
+.banner{
+    &_img{
+        grid-row 2;
+        grid-column: 2;
+        background-image: url("../img/fodos/bogota.jpg");
+        background-size: 100%;
+        border-radius: 30px;
+        display: grid;
+        grid-template-columns: 30% auto;
+        &_px{
+            grid-column: 1;  
+            display: grid;
+            grid-template-rows: auto 50% auto;
+            .content{
+                grid-row 2;
+                color: base;
+                text-align: center;
+            }
+        }
+    }//END=>&_img
+    &_card{
+        position: absolute;
+        margin-top: 250px;
+        left: 65%;
+    }//END=>_card
+    &_grados{
+        background-color: lienzo;
+        border-radius: 0 20px 20px 0;
+        box-shadow: $shadow;
+        position: absolute;
+        left:0;
+        top: 100px;
+        height: 150px;
+        width: 100px;
+        // &:after {
+        //     width: 0;
+        //     height: 0;
+        //     border-style: solid;
+        //     border-width: 20px 20px 0 0;
+        //     border-color: #000 transparent transparent transparent;
+        //     content: "";
+        //     bottom: 0;
+        //     position: absolute;
+        //     margin-bottom: -20px;
+        // }
+        // &:before {
+        //     width: 0;
+        // height: 0;
+        // border-style: solid;
+        // border-width: 20px 0 0 20px;
+        // border-color: transparent transparent transparent #007bff;
+        // }
+    }//END=>_grados
+}
+.card_clima{
+    background-color: lienzo;
+    border-radius: 20px;
+    box-shadow: $shadow;
+    width: 220px;
+    height: 120px;
 }
 #content{
     grid-row 2;
+    display: grid;
+    grid-template-columns: 5% 20% 20% 20% 220px auto;
+}
+.content{
+    &_one{
+        display: grid;
+        grid-template-rows: 80px auto auto auto;
+    }
+    &_two{
+        display: grid;
+        grid-template-rows: 80px auto;
+    }
+    &_three{
+        display: grid;
+        grid-template-rows: 80px 80px auto;
+    }
+    &_four{
+        display: grid;
+        grid-template-rows: 200px  auto;
+    }
 }

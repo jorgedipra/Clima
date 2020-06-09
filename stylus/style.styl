@@ -4,16 +4,24 @@
 //cuerpo
 @import './index/style__skelet'
 
+html {
+    background-color: fondo !important;
+}
 body{
     background-color: fondo;
     height: 100%;
-    position: absolute;
+    font-family: 'roboto_regular'
+    position: relative;
     margin: 0;
-    padding: 0;
+    padding: 20px 0 20px 0;
     width: 100%;
     @media ({$lg}) {
         display: grid;
         grid-template-columns: auto 1200px auto;
 	    grid-template-rows: 100%;
     }
+}
+
+.text_center{
+    text-align: center;
 }
